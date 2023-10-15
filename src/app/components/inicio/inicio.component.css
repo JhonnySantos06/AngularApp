@@ -1,0 +1,65 @@
+/* home.component.css */
+
+/* Estilos para el encabezado de la lista de tareas */
+.tareas-container {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #0e0d0d;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #333; /* Color del texto */
+  }
+  
+  /* Estilos para la lista de tareas */
+  ul {
+    list-style-type: none; /* Quita los marcadores de lista */
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px; /* Espacio entre el checkbox y el texto de la tarea */
+  }
+  
+  /* Estilos para el formulario de agregar tareas */
+  form {
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
+    width: 10%; /* Ancho del campo de entrada de texto */
+    padding: 5px;
+  }
+  
+  button {
+    background-color: #007BFF; /* Color de fondo del botón */
+    color: #fff; /* Color del texto del botón */
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px; 
+  }
+  
+  button:disabled {
+    background-color: #ccc; /* Color de fondo del botón deshabilitado */
+    cursor: not-allowed;
+  }
+
+  .header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px; /*  espacio en la parte superior   */
+    margin-right: 5%;
+  }
+  

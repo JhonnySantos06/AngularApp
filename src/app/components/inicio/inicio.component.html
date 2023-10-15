@@ -1,0 +1,20 @@
+<div class="tareas-container">
+  <h2>Mis Tareas</h2>
+    
+  <div class="header">
+    <button type="submit" (click)="goToLogin()">Cerrar Sesión</button>
+  </div>
+ 
+    <ul>
+      <li *ngFor="let task of tasks">
+        <input type="checkbox" [checked]="task.completed" (change)="markAsCompleted(task)" />
+        {{ task.title }}
+        <button (click)="deleteTask(task)">Eliminar</button>
+      </li>
+    </ul>
+    <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+      <input type="text" formControlName="title" placeholder="Nueva tarea" />
+      <button type="submit" [disabled]="taskForm.invalid">Agregar</button>
+    </form>
+  </div>
+  
