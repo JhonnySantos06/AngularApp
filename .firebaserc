@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "gestiontareas-a519a": {
+      "hosting": {
+        "GestionTareas": [
+          "gestiontareas-a519a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "gestiontareas-a519a"
+  }
+}

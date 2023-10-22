@@ -8,6 +8,13 @@ import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -20,7 +27,11 @@ import { InicioComponent } from './components/inicio/inicio.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

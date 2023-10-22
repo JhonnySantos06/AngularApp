@@ -7,14 +7,14 @@
  
     <ul>
       <li *ngFor="let task of tasks">
-        <input type="checkbox" [checked]="task.completed" (change)="markAsCompleted(task)" />
+        <input type="checkbox" [checked]="task.completed" (change)="toggleTaskCompletion(task)" />
         {{ task.title }}
         <button (click)="deleteTask(task)">Eliminar</button>
       </li>
     </ul>
     <form [formGroup]="taskForm" (ngSubmit)="addTask()">
       <input type="text" formControlName="title" placeholder="Nueva tarea" />
-      <button type="submit" [disabled]="taskForm.invalid">Agregar</button>
+      <button type="submit" [disabled]="taskForm.invalid && !taskForm.get('title')?.value">Agregar</button>
     </form>
   </div>
   
