@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IPersona } from '../persona'; 
-import { Observable } from 'rxjs';
+import { Observable,throwError } from 'rxjs';
 import { Task } from '../task.model';
 import { map } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+
 
 
 
@@ -26,13 +26,7 @@ export class DataFirebaseService {
     try {
       const response = await this.client.post<{ name: string }>(`${this.URL}personas.json`, data).toPromise();
   
-      if (response && response.name) {
-        // Registro exitoso, devuelve el ID
-        return response.name;
-      } else {
-        // No se pudo obtener el ID, devuelve null
-        return null;
-      }
+      return response?.name ?? null;
     } catch (error) {
       console.error('Error al registrar:', error);
       throw error; // Puedes manejar el error de acuerdo a tus necesidades.
@@ -88,7 +82,7 @@ export class DataFirebaseService {
  
 
     deleteTaskForUser(userId: string, task: Task): Observable<void> {
-      if (task && task.id) { // Verificar que task y task.id no sean undefined
+      if (task?.id) { // Verificar que task y task.id no sean undefined
         const taskId = task.id.toString();
         const deleteUrl = `${this.URL}personas/${userId}/${taskId}.json`;
         
@@ -104,7 +98,7 @@ export class DataFirebaseService {
   getTaskIdByTitle(userId: string, title: string): Observable<any> {
     return this.client.get<any>(`${this.URL}personas/${userId}.json`).pipe(
       map((userResponse) => {
-        if (userResponse && userResponse[userId]) {
+        if (userResponse?.[userId]) {
           const userTasks = userResponse[userId];
           for (const taskId in userTasks) {
             if (userTasks[taskId].title === title) {

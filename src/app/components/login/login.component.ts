@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup,FormBuilder,Validators,FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup,FormBuilder,Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataFirebaseService } from '../../service/data-firebase.service';
 import { UserserviceService } from '../../service/userservice.service';

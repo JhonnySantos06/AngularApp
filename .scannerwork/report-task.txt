@@ -1,0 +1,6 @@
+projectKey=GestionTareas
+serverUrl=http://localhost:9000
+serverVersion=10.4.0.87286
+dashboardUrl=http://localhost:9000/dashboard?id=GestionTareas
+ceTaskId=482c94c3-27a6-4a53-ad81-49dcc0072aed
+ceTaskUrl=http://localhost:9000/api/ce/task?id=482c94c3-27a6-4a53-ad81-49dcc0072aed
